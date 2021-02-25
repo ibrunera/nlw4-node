@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import { SurveyController } from './controllers/SurveyController';
 import { UserController } from './controllers/UserController';
 
@@ -12,6 +12,6 @@ router.post('/users', userController.create);
 
 router.post('/surveys', surveyController.create);
 
-router.get('/surveys',surveyController.show);
+router.get('/surveys', surveyController.show);
 
-export {router};
+export default router;

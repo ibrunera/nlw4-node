@@ -1,21 +1,23 @@
-import { Request, Response } from "express";
-import { getCustomRepository } from "typeorm";
-import { SurveysRepository } from "../repositories/SurveysRepository";
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable class-methods-use-this */
+import { Request, Response } from 'express';
+import { getCustomRepository } from 'typeorm';
+import { SurveysRepository } from '../repositories/SurveysRepository';
 
-class SurveyController{
-  async create(request:Request, response:Response){
-    const {title, description} = request.body;
+class SurveyController {
+  async create(request: Request, response: Response) {
+    const { title, description } = request.body;
 
     const surveysRepository = getCustomRepository(SurveysRepository);
 
-    const survey = surveysRepository.create({title,description});
+    const survey = surveysRepository.create({ title, description });
 
     await surveysRepository.save(survey);
 
     return response.status(201).json(survey);
   }
 
-  async show(request:Request, response:Response){
+  async show(request: Request, response: Response) {
     const surveysRepository = getCustomRepository(SurveysRepository);
 
     const all = await surveysRepository.find();
@@ -24,4 +26,4 @@ class SurveyController{
   }
 }
 
-export { SurveyController }
+export default SurveyController;

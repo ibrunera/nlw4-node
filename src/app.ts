@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import createConnection from './database';
-import { router } from './router';
+import router from './router';
 
 createConnection();
 
@@ -11,4 +11,4 @@ app.use(express.json());
 
 app.use(router);
 
-export { app };
+export default app;
