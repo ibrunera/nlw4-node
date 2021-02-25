@@ -33,7 +33,7 @@ class SendMailService {
       to,
       subject,
       html,
-      from: 'NPS <noreplay@nps.com>',
+      from: 'NPS <noreply@nps.com>',
     });
 
     console.log('Message sent: %s', info.messageId);
