@@ -2,7 +2,7 @@
 /* eslint-disable class-methods-use-this */
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
-import { SurveysRepository } from '../repositories/SurveysRepository';
+import SurveysRepository from '../repositories/SurveysRepository';
 
 class SurveyController {
   async create(request: Request, response: Response) {
